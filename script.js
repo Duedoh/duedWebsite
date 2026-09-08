@@ -1,7 +1,5 @@
 const toggle = document.querySelector(".menu-button");
 const nav = document.querySelector(".mobile-nav");
-const form = document.querySelector(".interest-form");
-const note = document.querySelector(".form-note");
 const navLinks = document.querySelectorAll(".desktop-nav a");
 const sections = document.querySelectorAll("main section[id]");
 const services = document.querySelectorAll(".service-item");
@@ -70,11 +68,3 @@ const updateScrollProgress = () => {
 
 updateScrollProgress();
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
-
-if (form && note && window.location.protocol === "file:") {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    note.textContent = "Interest noted locally. On Netlify, this form will submit to your success page.";
-    form.reset();
-  });
-}
