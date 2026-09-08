@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Duedoh is your mobile embassy after you land, with verified local companions, safe movement, stay support, and on-ground execution."
+    />
+    <title>Duedoh | Travel Brave. Travel Better.</title>
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h13" />
+        <path d="m13 6 6 6-6 6" />
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 3 19 6v5.4c0 4.4-2.7 7.7-7 9.6-4.3-1.9-7-5.2-7-9.6V6l7-3Z" />
+        <path d="m8.5 12.1 2.2 2.2 4.8-5" />
+      </symbol>
+      <symbol id="icon-language" viewBox="0 0 24 24">
+        <path d="M4 5h10" />
+        <path d="M9 3v2" />
+        <path d="M7 5c.5 3.3 2.8 5.8 6 7" />
+        <path d="M13 5c-.8 3.9-3.5 7-8 8.8" />
+        <path d="M14 21 18 11l4 10" />
+        <path d="M15.4 17.5h5.2" />
+      </symbol>
+      <symbol id="icon-wallet" viewBox="0 0 24 24">
+        <path d="M4 7.5h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5.5A2.5 2.5 0 0 1 3 17V8.5a1 1 0 0 1 1-1Z" />
+        <path d="M5 7.5 16.8 4.2A1.8 1.8 0 0 1 19 5.9v1.6" />
+        <path d="M17 13.5h4" />
+      </symbol>
+      <symbol id="icon-bed" viewBox="0 0 24 24">
+        <path d="M4 11V5.5" />
+        <path d="M20 18v-5a2 2 0 0 0-2-2H4v7" />
+        <path d="M4 18h16" />
+        <path d="M7 11V8.8a1.8 1.8 0 0 1 1.8-1.8h2.4A1.8 1.8 0 0 1 13 8.8V11" />
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <rect x="7" y="2.5" width="10" height="19" rx="2.4" />
+        <path d="M10.4 18.2h3.2" />
+      </symbol>
+      <symbol id="icon-location" viewBox="0 0 24 24">
+        <path d="M12 21s6.5-5.6 6.5-11.2a6.5 6.5 0 0 0-13 0C5.5 15.4 12 21 12 21Z" />
+        <circle cx="12" cy="9.8" r="2.2" />
+      </symbol>
+      <symbol id="icon-people" viewBox="0 0 24 24">
+        <path d="M16 20c-.4-2.6-2.3-4-5-4s-4.6 1.4-5 4" />
+        <circle cx="11" cy="9" r="4" />
+        <path d="M18 13.5c1.8.3 3 1.5 3.3 3.5" />
+        <path d="M17.4 5.4a3 3 0 0 1 0 5.2" />
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 12.5 4.2 4.2L19 7" />
+      </symbol>
+      <symbol id="icon-video" viewBox="0 0 24 24">
+        <rect x="3.5" y="6" width="12.5" height="12" rx="2" />
+        <path d="m16 10 4.5-2.5v9L16 14" />
+      </symbol>
+      <symbol id="icon-id" viewBox="0 0 24 24">
+        <rect x="3.5" y="5" width="17" height="14" rx="2" />
+        <circle cx="9" cy="11" r="2" />
+        <path d="M6.5 16c.6-1.5 1.4-2.2 2.5-2.2s1.9.7 2.5 2.2" />
+        <path d="M14 10h4" />
+        <path d="M14 14h3" />
+      </symbol>
+      <symbol id="icon-bike" viewBox="0 0 24 24">
+        <circle cx="6.5" cy="16.5" r="3.2" />
+        <circle cx="17.5" cy="16.5" r="3.2" />
+        <path d="M9.6 16.5h3.7l2-6H11" />
+        <path d="m8 9.5 2.8 7" />
+        <path d="M15.2 10.5 18 16.5" />
+        <path d="M16 7.5h3" />
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16" />
+        <path d="M4 12h16" />
+        <path d="M4 17h16" />
+      </symbol>
+      <symbol id="icon-apple" viewBox="0 0 24 24">
+        <path d="M16 3.2c-.3 1.7-1.6 3.1-3.2 3.3-.1-1.8 1.3-3.2 3.2-3.3Z" />
+        <path d="M19.1 16.8c-.5 1.2-.8 1.8-1.5 2.9-.9 1.4-2.1 3.1-3.6 3.1-1.3 0-1.7-.9-3.5-.9s-2.2.9-3.5.9c-1.5 0-2.7-1.5-3.6-2.9-2.5-3.9-2.8-8.4-1.2-10.8 1.1-1.7 2.8-2.6 4.5-2.6 1.7 0 2.8.9 4.2.9 1.4 0 2.2-.9 4.2-.9 1.5 0 3.1.8 4.2 2.2-3.7 2-3.1 7.2-.2 8.1Z" />
+      </symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24">
+        <path d="M5 4.8v14.4a1.3 1.3 0 0 0 2 1.1l12.5-7.2a1.3 1.3 0 0 0 0-2.2L7 3.7a1.3 1.3 0 0 0-2 1.1Z" />
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="Duedoh home">
+        <img src="assets/icon.png" alt="" />
+        <span>Duedoh</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#problem">The problem</a>
+        <a href="#services">Services</a>
+        <a href="#booking">The journey</a>
+        <a href="#verify">Verification</a>
+        <a href="#early-dude">For Dudes</a>
+      </nav>
+      <a class="nav-cta" href="#tripper-form">Register interest</a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+        <svg><use href="#icon-menu"></use></svg>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#problem">The problem</a>
+      <a href="#services">Services</a>
+      <a href="#booking">The journey</a>
+      <a href="#verify">Verification</a>
+      <a href="#early-dude">For Dudes</a>
+      <a href="#tripper-form">Register interest</a>
+    </nav>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Launching September-October 2026</p>
+          <h1>Your <em>mobile embassy</em> after you land.</h1>
+          <p class="hero-text">
+            Duedoh connects travelers with verified local companions for safe movement,
+            local coordination, stay support, and real help in unfamiliar cities.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#tripper-form">
+              Register early interest
+              <svg><use href="#icon-arrow"></use></svg>
+            </a>
+            <a class="button button-secondary" href="#early-dude">Become an early Dude</a>
+          </div>
+          <div class="trust-row" aria-label="Duedoh promises">
+            <span>Verified locals</span>
+            <span>Clear profiles</span>
+            <span>Visible SOS path</span>
+          </div>
+        </div>
+
+        <div class="hero-media reveal" aria-label="Duedoh arrival journey illustration">
+          <div class="map-orbit"></div>
+          <svg class="journey-route" viewBox="0 0 350 340" aria-hidden="true">
+            <path class="route-main" d="M30 260C115 272 84 156 169 169s38-102 149-101" />
+            <circle cx="30" cy="260" r="8" />
+            <circle cx="169" cy="169" r="8" />
+            <circle cx="318" cy="68" r="9" />
+          </svg>
+          <div class="arrival-note">
+            <span>Arrival</span>
+            <strong>Hyderabad, 10:45 PM</strong>
+          </div>
+          <div class="hero-stamp">TRAVEL<br />BRAVE<br />TRAVEL BETTER</div>
+          <img
+            class="hero-illustration"
+            src="assets/arrival-street.jpg"
+            alt="Helmeted motorcycle rider on an Indian road"
+          />
+          <div class="match-note">
+            <span>Match confirmed</span>
+            <strong>Verified Dude found</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" class="section section-wash">
+        <div class="container arrival-layout">
+          <div class="arrival-intro reveal">
+            <p class="kicker">The real gap</p>
+            <h2>Booking the trip is easy. Landing is another story.</h2>
+            <p>
+              When you arrive in an unfamiliar city, a different set of problems begins,
+              ones that no booking app can fix.
+            </p>
+          </div>
+          <div class="arrival-list">
+            <article class="arrival-item reveal">
+              <svg><use href="#icon-shield"></use></svg>
+              <h3>Safety anxiety</h3>
+              <p>Moving through an unknown city at night with no one to rely on is genuinely frightening.</p>
+            </article>
+            <article class="arrival-item reveal">
+              <svg><use href="#icon-language"></use></svg>
+              <h3>Language barriers</h3>
+              <p>Local dialects, signage, and vendors are difficult without a real human who knows the city.</p>
+            </article>
+            <article class="arrival-item reveal">
+              <svg><use href="#icon-wallet"></use></svg>
+              <h3>Overcharging risk</h3>
+              <p>Tourists pay 3-10x the local price. Without local knowledge, there is no way to know.</p>
+            </article>
+            <article class="arrival-item reveal">
+              <svg><use href="#icon-bed"></use></svg>
+              <h3>Late-night stay problems</h3>
+              <p>Missed trains, cancelled bookings, and no safe place to wait happen at the worst hours.</p>
+            </article>
+            <article class="arrival-item reveal">
+              <svg><use href="#icon-phone"></use></svg>
+              <h3>No reliable support</h3>
+              <p>Customer care lines cannot actually help you on the ground. You need a real human.</p>
+            </article>
+            <article class="arrival-item reveal">
+              <svg><use href="#icon-location"></use></svg>
+              <h3>Local confusion</h3>
+              <p>Maps do not tell you which auto to take, which area to avoid, or where the real food is.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="launch-status" class="launch-band">
+        <div class="container launch-layout reveal">
+          <div>
+            <p class="kicker">Launching soon</p>
+            <h2>Duedoh is almost here.</h2>
+            <p>Expected launch window: <strong>September-October 2026</strong></p>
+          </div>
+          <div class="launch-meta">
+            <div class="city-list" aria-label="Initial launch cities">
+              <span><svg><use href="#icon-location"></use></svg>Hyderabad</span>
+              <span><svg><use href="#icon-location"></use></svg>Visakhapatnam</span>
+              <span><svg><use href="#icon-location"></use></svg>Goa</span>
+            </div>
+            <div class="store-list">
+              <span><svg><use href="#icon-apple"></use></svg>App Store soon</span>
+              <span><svg><use href="#icon-play"></use></svg>Google Play soon</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container services-layout">
+          <div class="services-intro reveal">
+            <p class="kicker">What Duedoh offers</p>
+            <h2>Your local execution layer.</h2>
+            <p>
+              Five service modes designed for every traveler situation, from quick guidance
+              to full on-ground companionship.
+            </p>
+          </div>
+          <div class="service-list">
+            <article class="service-item reveal is-active">
+              <span class="service-number">01</span>
+              <div class="service-title">
+                <svg><use href="#icon-people"></use></svg>
+                <h3>Dude Lite</h3>
+              </div>
+              <p>Your local companion for safety, navigation, food spots, and cultural guidance.</p>
+              <svg><use href="#icon-arrow"></use></svg>
+              <div class="service-tags"><span>On-ground presence</span><span>Group trips</span><span>Navigation</span><span>Food and culture</span></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number">02</span>
+              <div class="service-title">
+                <svg><use href="#icon-bike"></use></svg>
+                <h3>Dude Pro</h3>
+              </div>
+              <p>Everything in Dude Lite, plus mobility by bike or car for deeper local access and faster execution.</p>
+              <svg><use href="#icon-arrow"></use></svg>
+              <div class="service-tags"><span>Dude Lite included</span><span>Bike and car mobility</span><span>Companion</span></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number">03</span>
+              <div class="service-title">
+                <svg><use href="#icon-shield"></use></svg>
+                <h3>Dude Max</h3>
+              </div>
+              <p>Full-spectrum support with mobility, accommodation, food coordination, and end-to-end oversight.</p>
+              <svg><use href="#icon-arrow"></use></svg>
+              <div class="service-tags"><span>Stay support</span><span>Food</span><span>Full execution</span></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number">04</span>
+              <div class="service-title">
+                <svg><use href="#icon-bed"></use></svg>
+                <h3>Dude Stay</h3>
+              </div>
+              <p>Night-stay and rest support when you need a safe place to sleep and continue your journey.</p>
+              <svg><use href="#icon-arrow"></use></svg>
+              <div class="service-tags"><span>Night stay</span><span>Emergency</span><span>Safe rest</span></div>
+            </article>
+            <article class="service-item reveal">
+              <span class="service-number">05</span>
+              <div class="service-title">
+                <svg><use href="#icon-phone"></use></svg>
+                <h3>Dude Support</h3>
+              </div>
+              <p>Remote chat or call help for quick guidance, price checks, and local advice. Billed per minute, no booking needed.</p>
+              <svg><use href="#icon-arrow"></use></svg>
+              <div class="service-tags"><span>Remote</span><span>Chat or call</span><span>Instant</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-panel">
+        <div class="container story-layout reveal">
+          <div class="story-art" aria-hidden="true">
+            <div class="story-symbol">
+              <svg><use href="#icon-bike"></use></svg>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="story-copy">
+            <p class="kicker">Travel brave. Travel better.</p>
+            <h2>Open the app, pick your Dude, and go.</h2>
+            <p>
+              Duedoh is made for travelers who need clarity after arrival: where to go,
+              how to move, what to avoid, and who can actually help on the ground.
+            </p>
+            <p class="story-quote">Not just a booking. A real person who understands the place you have just arrived in.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="section journey-section">
+        <div class="container">
+          <div class="journey-heading reveal">
+            <div>
+              <p class="kicker">How it works</p>
+              <h2>From landing to local support in four simple steps.</h2>
+            </div>
+            <p>Get started in seconds with no long forms and no friction.</p>
+          </div>
+          <div class="journey-rail reveal">
+            <article class="journey-step reveal">
+              <div class="journey-point"><svg><use href="#icon-phone"></use></svg></div>
+              <span>01</span>
+              <div>
+                <h3>Open the app</h3>
+                <p>Start the booking flow and tell Duedoh where you need help.</p>
+              </div>
+            </article>
+            <article class="journey-step reveal">
+              <div class="journey-point"><svg><use href="#icon-location"></use></svg></div>
+              <span>02</span>
+              <div>
+                <h3>Choose your location</h3>
+                <p>Select Hyderabad, Vizag, or Goa. More cities will come after launch.</p>
+              </div>
+            </article>
+            <article class="journey-step reveal">
+              <div class="journey-point"><svg><use href="#icon-people"></use></svg></div>
+              <span>03</span>
+              <div>
+                <h3>Choose your Dude</h3>
+                <p>Browse verified locals, check profile, ID verification, rating, and fit.</p>
+              </div>
+            </article>
+            <article class="journey-step reveal">
+              <div class="journey-point"><svg><use href="#icon-check"></use></svg></div>
+              <span>04</span>
+              <div>
+                <h3>Book the Dude</h3>
+                <p>Confirm instantly and enjoy your trip with less uncertainty.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="verify" class="section section-wash">
+        <div class="container">
+          <div class="verification-layout">
+            <div class="verification-intro reveal">
+              <p class="kicker">How we verify</p>
+              <h2>Know your Dude before you book.</h2>
+              <p>
+                Customers deserve to know who is showing up, what has been checked,
+                and how support works if something feels wrong.
+              </p>
+            </div>
+            <div class="proof-list">
+              <article class="proof-item reveal">
+                <div class="proof-icon"><svg><use href="#icon-id"></use></svg></div>
+                <h3>Identity checked</h3>
+                <p>Identity documents and personal details are reviewed before a Dude profile is activated.</p>
+              </article>
+              <article class="proof-item reveal">
+                <div class="proof-icon"><svg><use href="#icon-video"></use></svg></div>
+                <h3>Video verified</h3>
+                <p>A live video check confirms the person behind the profile before activation.</p>
+              </article>
+              <article class="proof-item reveal">
+                <div class="proof-icon"><svg><use href="#icon-bike"></use></svg></div>
+                <h3>Vehicle details checked</h3>
+                <p>When a Dude uses a vehicle, submitted details and documents are reviewed for matching.</p>
+              </article>
+              <article class="proof-item reveal">
+                <div class="proof-icon"><svg><use href="#icon-check"></use></svg></div>
+                <h3>Prepared for the role</h3>
+                <p>Energetic local companions complete virtual onboarding and scenario-based guidance.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="app-profile reveal">
+            <div class="profile-art" aria-hidden="true">
+              <div class="profile-symbol">
+                <svg><use href="#icon-id"></use></svg>
+                <span>Verified</span>
+                <i></i>
+              </div>
+            </div>
+            <div class="profile-copy">
+              <p class="kicker">What you see in the app</p>
+              <h3>A clear profile before you commit.</h3>
+              <p>
+                Photo, verification badges, training status, ratings, languages, education or work
+                background, local strengths, and vehicle details when a vehicle is part of the booking.
+              </p>
+              <div class="profile-facts">
+                <span>ID verified</span>
+                <span>Language details</span>
+                <span>Local strengths</span>
+                <span>Vehicle details</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sos-panel reveal">
+            <div>
+              <p class="kicker">SOS path</p>
+              <h2>One tap when you need help.</h2>
+              <p>
+                The in-app SOS button gives customers a visible escalation path during an active booking,
+                with relevant booking context passed to Duedoh support.
+              </p>
+            </div>
+            <div class="sos-steps">
+              <span>Press SOS in the app</span>
+              <span>Reach human support</span>
+              <span>Get the next action</span>
+            </div>
+            <small>
+              SOS supports urgent in-app escalation and does not replace police, ambulance, fire,
+              or other local emergency services.
+            </small>
+          </div>
+        </div>
+      </section>
+
+      <section id="early-dude" class="early-dude">
+        <div class="container early-layout reveal">
+          <div>
+            <p class="kicker">Limited launch opportunity</p>
+            <h2>Become an Early Dude.</h2>
+            <p>
+              Earn by helping travelers after they arrive in your city. Be part of the first
+              verified Dude network in India and build a reputation from day one.
+            </p>
+          </div>
+          <div class="bonus-box">
+            <span>Early Dude launch bonus opportunity</span>
+            <strong>Up to INR 25,000</strong>
+            <small>Subject to verification, bookings completed, quality standards, and Duedoh policy.</small>
+            <a class="button button-light" href="https://duedoh.com" target="_blank" rel="noopener">
+              Register interest
+              <svg><use href="#icon-arrow"></use></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tripper-form" class="section">
+        <div class="container form-layout">
+          <div class="section-head reveal">
+            <p class="kicker">Early Tripper</p>
+            <h2>Get early access.</h2>
+            <p>Tell us about yourself and your travel situation. We will keep you updated as Duedoh launches in your city.</p>
+          </div>
+          <form class="interest-form reveal" name="early-tripper" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+            <input type="hidden" name="form-name" value="early-tripper" />
+            <p class="honeypot-field"><label>Do not fill this out: <input name="bot-field" /></label></p>
+            <label>
+              <span>Full name *</span>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+            <label>
+              <span>Phone / WhatsApp *</span>
+              <input type="tel" name="phone" placeholder="+91 XXXXXXXXXX" required />
+            </label>
+            <label>
+              <span>Preferred city *</span>
+              <select name="city" required>
+                <option value="" disabled selected>Select a city</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Visakhapatnam">Visakhapatnam (Vizag)</option>
+                <option value="Goa">Goa</option>
+                <option value="Other">Other, notify when available</option>
+              </select>
+            </label>
+            <label>
+              <span>Main need</span>
+              <select name="main_need">
+                <option value="" disabled selected>What do you need most?</option>
+                <option value="Safe movement & navigation">Safe movement and navigation</option>
+                <option value="Local companion">Local companion</option>
+                <option value="Late-night stay support">Late-night stay support</option>
+                <option value="Food & local coordination">Food and local coordination</option>
+                <option value="Emergency support">Emergency support</option>
+                <option value="Price protection">Price protection</option>
+                <option value="General local guidance">General local guidance</option>
+              </select>
+            </label>
+            <label class="full">
+              <span>Travel situation / bad experience with travel</span>
+              <textarea name="experience" placeholder="Tell us about a travel situation where you needed on-ground help, or what kind of support you are looking for."></textarea>
+            </label>
+            <button type="submit">
+              Submit my interest
+              <svg><use href="#icon-arrow"></use></svg>
+            </button>
+            <p class="form-note" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <img src="assets/icon.png" alt="" />
+        <span>Duedoh</span>
+      </div>
+      <p>Travel Brave. Travel Better. Your Mobile Embassy.</p>
+      <nav aria-label="Footer navigation">
+        <a href="#problem">The problem</a>
+        <a href="#services">Services</a>
+        <a href="#booking">The journey</a>
+        <a href="#verify">Verification</a>
+        <a href="#tripper-form">Early access</a>
+        <a href="https://duedoh.info" target="_blank" rel="noopener">Become a Dude</a>
+      </nav>
+      <small>&copy; 2026 Duedoh TravelTech India Private Limited. All rights reserved.</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
