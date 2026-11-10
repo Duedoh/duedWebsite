@@ -18,6 +18,39 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div
+      id="intro-video-modal"
+      class="intro-video-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="intro-video-title"
+      hidden
+    >
+      <div class="intro-video-backdrop" data-intro-close></div>
+      <div class="intro-video-card">
+        <div class="intro-video-heading">
+          <div>
+            <p class="intro-video-kicker">Welcome to Duedoh</p>
+            <h2 id="intro-video-title">See how Duedoh works</h2>
+          </div>
+          <button class="intro-video-close" type="button" data-intro-close aria-label="Skip intro video">×</button>
+        </div>
+        <video
+          id="intro-video-player"
+          src="assets/IntroDuedoh.mp4"
+          controls
+          muted
+          playsinline
+          preload="metadata"
+          aria-label="Introduction to Duedoh"
+        ></video>
+        <div class="intro-video-actions">
+          <span>Video starts muted. Use the player control to turn on sound.</span>
+          <button type="button" data-intro-close>Continue to website</button>
+        </div>
+      </div>
+    </div>
+
     <svg class="icon-sprite" aria-hidden="true">
       <symbol id="icon-arrow" viewBox="0 0 24 24">
         <path d="M5 12h13" />
@@ -128,7 +161,7 @@
     <main>
       <section id="hero" class="hero">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Coming soon to Google Play</p>
+          <p class="eyebrow">Coming soon to the Play Store</p>
           <h1>Your <em>mobile embassy</em> after you land.</h1>
           <p class="hero-text">
             Duedoh connects travelers with verified local companions for safe movement,
@@ -222,8 +255,10 @@
         <div class="container launch-layout reveal">
           <div>
             <p class="kicker">Launching soon</p>
-            <h2>Duedoh is coming soon to Google Play.</h2>
-            <p>The Duedoh traveler and partner apps are being prepared for Google Play, with App Store availability also planned.</p>
+            <h2>Duedoh launches on the Play Store on 29 November 2026.</h2>
+            <p>The Duedoh traveler and partner apps launch on 29 November 2026. App Store availability is also planned.</p>
+            <p id="launch-countdown" class="launch-countdown" role="timer" aria-live="off">Counting down to launch…</p>
+            <video id="launch-video" class="launch-video" controls playsinline hidden aria-label="Duedoh launch video"></video>
           </div>
           <div class="launch-meta">
             <div class="city-list" aria-label="Initial launch cities">
@@ -232,7 +267,7 @@
               <span><svg><use href="#icon-location"></use></svg>Goa</span>
             </div>
             <div class="store-list">
-              <span><svg><use href="#icon-play"></use></svg>Coming soon on Google Play</span>
+              <span><svg><use href="#icon-play"></use></svg>Coming soon on the Play Store</span>
               <span><svg><use href="#icon-apple"></use></svg>App Store planned</span>
             </div>
           </div>
@@ -294,11 +329,11 @@
               <span class="service-number">05</span>
               <div class="service-title">
                 <svg><use href="#icon-phone"></use></svg>
-                <h3>Duedoh Ask</h3>
+                <h3>Dude Ask</h3>
               </div>
-              <p>Go online from home and answer travelers by chat or call with local advice, directions, and price checks. Eligible completed support time lets Dudes earn remotely without travelling.</p>
+              <p>Dedicated chat support from home. Dude Ask partners answer travelers' questions and do not receive Lite or Pro trip orders.</p>
               <svg><use href="#icon-arrow"></use></svg>
-              <div class="service-tags"><span>Earn from home</span><span>Paid chat or call</span><span>Instant Connect</span></div>
+              <div class="service-tags"><span>Earn from home</span><span>Paid chat</span><span>Instant Connect</span></div>
             </article>
           </div>
         </div>
